@@ -5,19 +5,19 @@ var express = require('express')
 var app = express()
 
 app.get('/', function (req, res) {
-  res.send('Hello World!')
+ 	res.send('Hello World!')
 })
 
 app.listen(3001, function () {
-  console.log('Example app listening on port 3000!')
+	console.log('Example app listening on port 3000!')
 })
 
 wss.on('connection', function connection(ws) {
-  ws.on('message', function incoming(message) {
-    console.log('received: %s', message);
-  });
+  	ws.on('message', function incoming(message) {
+    	console.log('received: %s', message);
+	});
  
-  ws.send('R');
-ws.send('G');
-ws.send('B');
+  	ws.send('R:255');
+	ws.send('G:127');
+	ws.send('B:32');
 });
